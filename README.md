@@ -87,8 +87,8 @@ sudo npm install forever -g
 Clone this repository
 ```
 git clone https://github.com/RiseVision/ark-node.git
-checkout rise_testnet
 cd ark-node
+checkout rise_testnet
 ```
 
 Install node modules:
@@ -100,11 +100,17 @@ npm install
 ## Launch
 To launch Ark on Rise testnet
 
-Edit `rise/config.rise.json` and enter the password you set for the database in `db.password`.
+Edit rise/config.rise.json with:
+nano rise/config.rise.json
 
+and enter "password" on db --> password
+
+sudo -u postgres psql -c "CREATE USER $USER WITH PASSWORD 'password';"
+sudo -u postgres createdb -O $USER rise_testnet
 ```
-createdb ark_testnet
-forever start app.js -c rise/config.rise.json -g rise/genesisBlock.rise.json 
+
+createdb rise_testnet
+forever start app.js -c rise/config.rise.json -g rise/genesisBlock.rise.json
 ```
 
 To launch Ark on testnet:
