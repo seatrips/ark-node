@@ -106,6 +106,7 @@ nano rise/config.rise.json
 and enter "password" on db --> password
 
 sudo -u postgres psql -c "CREATE USER $USER WITH PASSWORD 'password';"
+
 sudo -u postgres createdb -O $USER rise_testnet
 ```
 
