@@ -11,7 +11,7 @@
     "port": 5432,
     "database": "rise_testnet",
     "user": null,
-    "password": "<db password here>",
+    "password": "password",
     "poolSize": 20,
     "poolIdleTimeout": 30000,
     "reapIntervalMillis": 1000,
